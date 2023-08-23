@@ -55,7 +55,7 @@ class ProductManager {
 
 const producto = new ProductManager();
 producto.addProduct("manga1", "mangaDescripcion1", 10000, "imagen1", "abc1", 5);
-//Producto no mostrado por codigo repetido (12)
+//Producto no mostrado por codigo repetido (abc1)
 producto.addProduct("manga2", "mangaDescripcion2", 10000, "imagen2", "abc1", 5);
 producto.addProduct("manga3", "mangaDescripcion3", 10000, "imagen3", "abc3", 5);
 console.log(producto.getProducts());
