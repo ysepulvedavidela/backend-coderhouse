@@ -50,7 +50,7 @@ app.get('*', (req, res) => {
 
 
 app.listen(port, () => {
-  console.log(`Listenign on port http://localhost:${port}`)
+  console.log(`Listening port http://localhost:${port}`)
 });
 
 
