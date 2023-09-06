@@ -1,22 +1,16 @@
 // <-------Realizar una clase ProductManager que gestione un conjunto de productos-------> //
-//Pre Entrega 2
+//Pre Entrega 3
 
-const fs = require('fs')
+import fs from'fs';
 
 class ProductManager {
     constructor(path) {
         this.path = path;
-        try {
-            this.objs = fs.readFileSync(this.path, 'utf-8');
-            this.objs = JSON.parse(this.objs)
-
-        } catch (error) {
-            this.objs = []
-        }
+        fs.existsSync(this.path) ? this.objs = JSON.parse(fs.readFileSync(this.path, 'utf-8')) : this.objs = [];
     }
 
     getProducts() {
-        return this.objs
+        return this.objs;
     }
 
     async addProduct(titulo, descripcion, precio, imagen, codigo, stock) {
@@ -77,7 +71,7 @@ class ProductManager {
         } else {
             console.log("Producto no encontrado");
         }
-
+        return obj;
     }
 
     async deleteProduct(id) {
@@ -107,24 +101,24 @@ class ProductManager {
                 console.log('Producto actualizado.')
             }
         } catch (error) {
-            console.log('Error update:', error)
+            console.log('Error al actualizar:', error)
         }
     }
 
 }
 
-const producto = new ProductManager('./products.json');
-producto.addProduct("manga1", "mangaDescripcion1", 10000, "imagen1", "abc1", 5);
+export default new ProductManager('./src/products.json');
+//producto.addProduct("manga1", "mangaDescripcion1", 10000, "imagen1", "abc1", 5);
 //Producto no mostrado por codigo repetido (abc1)
-producto.addProduct("manga2", "mangaDescripcion2", 15990, "imagen2", "abc1", 15);
-producto.addProduct("manga3", "mangaDescripcion3", 9990, "imagen3", "abc3", 30);
-producto.addProduct("manga4", "mangaDescripcion4", 5990, "imagen4", "abc4", 23);
+//producto.addProduct("manga2", "mangaDescripcion2", 15990, "imagen2", "abc1", 15);
+//producto.addProduct("manga3", "mangaDescripcion3", 9990, "imagen3", "abc3", 30);
+//producto.addProduct("manga4", "mangaDescripcion4", 5990, "imagen4", "abc4", 23);
 //No se guarda por falta de stock
-producto.addProduct("manga5", "mangaDescripcion5", 5990, "imagen5", "abc5");
+//producto.addProduct("manga5", "mangaDescripcion5", 5990, "imagen5", "abc5");
 //Buscar producto por ID 1
 //producto.getProductById(1)
 //Muestra productos existentes
-console.log(producto.getProducts());
+//console.log(producto.getProducts());
 //Modifica el precio
 //producto.update(3, { precio: 8765 });
 //Elimina producto ID 2

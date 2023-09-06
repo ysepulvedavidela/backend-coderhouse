@@ -1,0 +1,29 @@
+[
+	{
+		"titulo": "manga1",
+		"descripcion": "mangaDescripcion1",
+		"precio": 10000,
+		"imagen": "imagen1",
+		"codigo": "abc1",
+		"stock": 5,
+		"id": 1
+	},
+	{
+		"titulo": "manga3",
+		"descripcion": "mangaDescripcion3",
+		"precio": 9990,
+		"imagen": "imagen3",
+		"codigo": "abc3",
+		"stock": 30,
+		"id": 2
+	},
+	{
+		"titulo": "manga4",
+		"descripcion": "mangaDescripcion4",
+		"precio": 5990,
+		"imagen": "imagen4",
+		"codigo": "abc4",
+		"stock": 23,
+		"id": 3
+	}
+]
